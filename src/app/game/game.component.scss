@@ -1,0 +1,56 @@
+ion-card {
+  font-family: 'IBM Plex Mono' !important;
+  color: white;
+  position: relative;
+  height: auto;
+  background-color: transparent;
+  box-shadow: none!important;
+
+  img {
+    object-fit: contain;
+    height: inherit;
+  }
+
+  @media (min-width: 321px) and (max-width: 376px) {
+    height: 215px;
+  }
+  @media (min-width: 377px) and (max-width: 426px) {
+    height: 230px;
+  }
+
+  ion-card-content {
+    position: relative;
+    top: -94px;
+
+    p {
+      position: relative;
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .logo {
+      position: relative;
+      width: 43px;
+      height: 42px;
+      @media (min-width: 377px) and (max-width: 426px) {
+        top: -15px;
+      }
+    }
+
+    .blurred {
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      top: 0;
+      left: 4px;
+      background: rgba(0, 0, 0, 0.7);
+      filter: blur(4px);
+    }
+    ion-card-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: white;
+    }
+  }
+
+}

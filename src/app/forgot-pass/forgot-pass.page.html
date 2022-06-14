@@ -1,0 +1,22 @@
+<ion-content>
+  <ion-img src="assets/images/login.png"></ion-img>
+  <h3 class="text-center pt-2">Reset credentials</h3>
+  <div class="text-center" style="font-size: 13px">
+    We send you reset link per email
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="mail-outline"></ion-icon>
+        E-Mail
+      </ion-label>
+      <ion-input [(ngModel)]="email" placeholder="Type your email"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-buttons class="d-flex flex-column  bottom-0 pt-3">
+    <ion-button class="red" (click)="onSend()">
+      SEND EMAIL
+    </ion-button>
+  </ion-buttons>
+  <div class="copyright bottom-0">© 2022 Dicenet</div>
+</ion-content>

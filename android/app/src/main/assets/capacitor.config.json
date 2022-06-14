@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "dicenet-prototype",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

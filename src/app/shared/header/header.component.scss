@@ -1,0 +1,27 @@
+@import '../../../theme/base.scss';
+
+.background {
+  --background: #161616;
+  --color: white;
+}
+
+ion-toolbar {
+  font-family: 'IBM Plex Mono' !important;
+
+  ion-title {
+    font-size: 14px;
+  }
+
+  ion-icon {
+    font-size: 24px;
+  }
+}
+
+ion-searchbar {
+  --background: rgb(68, 68, 68);
+  --color: white;
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  position: fixed;
+  z-index: 1;
+}

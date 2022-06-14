@@ -1,0 +1,18 @@
+<app-header title="Game Collection"></app-header>
+<ion-content>
+  <div *ngFor="let game of games">
+    <app-game [game]="game"
+              (click)="onClick(game)"
+    ></app-game>
+  </div>
+  <ion-buttons class="d-flex justify-content-end pt-4">
+    <ion-button (click)="addGame()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-buttons class="rents m-5d-flex justify-content-center">
+    <ion-button (click)="toRents()">
+      TO RENTS
+    </ion-button>
+  </ion-buttons>
+</ion-content>

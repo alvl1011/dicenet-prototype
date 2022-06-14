@@ -1,0 +1,71 @@
+ion-content {
+  font-family: 'IBM Plex Mono' !important;
+  --background: rgba(28, 28, 28) 105% 105% no-repeat;
+  --color: white;
+}
+
+ion-list {
+  background-color: transparent;
+
+  ion-item {
+    --background: transparent;
+    padding: 0 20px;
+    --ion-border-color: rgba(255, 255, 255, 0.5);
+    --highlight-color-focused: white;
+
+  }
+
+  ion-label {
+    font-family: 'IBM Plex Mono' !important;
+    font-size: 14px;
+    --color: white;
+  }
+}
+
+ion-item.item-has-focus > ion-label{
+  color: white !important;
+}
+
+.has-focus {
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  color: white
+}
+
+ion-input {
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  color: white
+}
+
+ion-buttons {
+  margin: 5px 10px;
+  align-items: center;
+  ion-button {
+    font-family: 'IBM Plex Mono' !important;
+    border-radius: 5px;
+    padding: 8px;
+    width: 80%;
+    background-color: #363636;
+    filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.25));
+    font-weight: normal;
+  }
+}
+
+.red {
+  background-color: #E31C25 !important;
+}
+
+.link {
+  font-family: 'IBM Plex Mono' !important;
+  color: white;
+  font-size: 10px;
+  text-decoration: underline;
+}
+
+.copyright {
+  font-family: 'IBM Plex Mono' !important;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+}

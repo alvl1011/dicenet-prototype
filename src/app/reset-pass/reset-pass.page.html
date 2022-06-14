@@ -1,0 +1,29 @@
+<ion-content>
+  <ion-img src="assets/images/login.png"></ion-img>
+  <h3 class="text-center pt-2">Reset credentials</h3>
+  <div class="text-center" style="font-size: 13px">
+    Type new password
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        Password
+      </ion-label>
+      <ion-input type="password" [(ngModel)]="password" placeholder="********"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        Repeat Password
+      </ion-label>
+      <ion-input type="password" [(ngModel)]="repeatPassword" placeholder="********"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-buttons class="d-flex flex-column  bottom-0 pt-3">
+    <ion-button class="red" (click)="onLogin()">
+      RESET PASSWORD
+    </ion-button>
+  </ion-buttons>
+  <div class="copyright bottom-0">© 2022 Dicenet</div>
+</ion-content>

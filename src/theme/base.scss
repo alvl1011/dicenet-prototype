@@ -1,0 +1,42 @@
+
+/* PRIMARY BLACK */
+$primary-black: #111111;
+$primary-black-l1: lighten($primary-black, 10%);
+$primary-black-l2: lighten($primary-black, 20%);
+$primary-black-d1: darken($primary-black, 10%);
+$primary-black-d2: darken($primary-black, 20%);
+
+/* PRIMARY RED */
+$primary-red: #E31C25;
+$primary-red-l1: lighten($primary-red, 10%);
+$primary-red-l2: lighten($primary-red, 20%);
+$primary-red-d1: darken($primary-red, 10%);
+$primary-red-d2: darken($primary-red, 20%);
+
+/* SECONDARY BLACK */
+$secondary-black: #1C1C1C;
+$secondary-black-l1: lighten($secondary-black, 10%);
+$secondary-black-l2: lighten($secondary-black, 20%);
+$secondary-black-d1: darken($secondary-black, 10%);
+$secondary-black-d2: darken($secondary-black, 20%);
+
+/* SECONDARY DARKEN */
+$secondary-darken: #161616;
+$secondary-darken-l1: lighten($secondary-darken, 10%);
+$secondary-darken-l2: lighten($secondary-darken, 20%);
+$secondary-darken-d1: darken($secondary-darken, 10%);
+$secondary-darken-d2: darken($secondary-darken, 20%);
+
+/* SECONDARY RED */
+$secondary-red: #BB000E;
+$secondary-red-l1: lighten($secondary-red, 10%);
+$secondary-red-l2: lighten($secondary-red, 20%);
+$secondary-red-d1: darken($secondary-red, 10%);
+$secondary-red-d2: darken($secondary-red, 20%);
+
+/* SECONDARY GRAY */
+$secondary-gray: #656565;
+$secondary-gray-l1: lighten($secondary-gray, 10%);
+$secondary-gray-l2: lighten($secondary-gray, 20%);
+$secondary-gray-d1: darken($secondary-gray, 10%);
+$secondary-gray-d2: darken($secondary-gray, 20%);

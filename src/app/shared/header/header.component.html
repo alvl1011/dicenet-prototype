@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar class="background">
+    <ion-buttons slot="start">
+      <ion-thumbnail>
+        <ion-img src="../../assets/images/logo.png"></ion-img>
+      </ion-thumbnail>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button *ngIf="isMainScreen" (click)="onSearch()">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="onClick()">
+        <ion-icon name="arrow-back-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="text-center">{{ title }}</ion-title>
+  </ion-toolbar>
+  <ion-searchbar
+    (search)="search($event.target.value)"
+    [class.d-none]="!isSearchActive"
+    animated></ion-searchbar>
+</ion-header>
+

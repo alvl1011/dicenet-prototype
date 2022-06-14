@@ -1,0 +1,29 @@
+<div class="d-flex flex-column main-modal">
+  <div class="modal-title game-title d-flex justify-content-between">
+    <div class="pt-1 ps-1">
+      Rent to:
+    </div>
+    <div>
+      <ion-buttons>
+        <ion-button (click)="dismiss()">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </div>
+  <div (click)="onClick(user)"
+    class="user d-flex justify-content-between"
+    *ngFor="let user of users">
+      <div class="avatar">
+        <img src="{{ user.profileImage }}"/>
+      </div>
+    <div class="w-75">
+      <div class="text-center mt-1">
+        {{ user.firstname }} {{ user.lastname }}
+      </div>
+      <hr class="w-100">
+    </div>
+  </div>
+</div>
+
+

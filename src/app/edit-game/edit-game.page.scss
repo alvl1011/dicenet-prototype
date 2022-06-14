@@ -1,0 +1,140 @@
+ion-content {
+  font-family: 'IBM Plex Mono' !important;
+  --background: url(../../assets/images/dice-back.svg) rgba(28, 28, 28) 105% 105% no-repeat;
+  --color: white;
+}
+
+ion-card {
+  font-family: 'IBM Plex Mono' !important;
+  color: white;
+  position: relative;
+  height: 180px;
+  margin: 0;
+  border-radius: 0;
+
+  img {
+    height: -webkit-fill-available;
+    width: 100%
+  }
+
+  @media (min-width: 321px) and (max-width: 376px) {
+    height: 215px;
+  }
+  @media (min-width: 377px) and (max-width: 426px) {
+    height: 230px;
+  }
+
+  ion-card-content {
+    position: relative;
+    top: -94px;
+
+    .logo {
+      position: relative;
+      float: right;
+      margin-top: 20px;
+      width: auto;
+      height: 42px;
+      top: -12px;
+      @media (min-width: 377px) and (max-width: 426px) {
+        top: -22px;
+      }
+    }
+
+    p {
+      position: relative;
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+
+    .rectangle {
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      top: 35px;
+      left: 0;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    ion-card-title {
+      font-size: 14px;
+      font-weight: 400;
+      color: white;
+    }
+  }
+
+}
+
+ion-list {
+  background-color: transparent;
+
+  ion-item {
+    --background: transparent;
+    padding: 0 20px;
+    --ion-border-color: rgba(255, 255, 255, 0.5);
+    --highlight-color-focused: white;
+
+  }
+
+  ion-label {
+    font-family: 'IBM Plex Mono' !important;
+    font-size: 14px;
+    --color: white;
+  }
+}
+
+ion-buttons {
+  margin: 5px 20px;
+  align-items: end;
+  ion-button {
+    font-family: 'IBM Plex Mono' !important;
+    border-radius: 5px;
+    padding: 3px 8px;
+    background-color: #363636;
+    filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.25));
+    font-weight: normal;
+  }
+}
+
+.red {
+  background-color: #E31C25 !important;
+}
+
+ion-item.item-has-focus > ion-label{
+  color: white !important;
+}
+
+.has-focus {
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  color: white
+}
+
+ion-input {
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  color: white
+}
+
+ion-textarea {
+  --placeholder-color: white !important;
+  font-family: 'IBM Plex Mono' !important;
+  color: white;
+  font-size: 14px;
+  padding-top: 30px;
+}
+
+input[type="file"] {
+  display: none !important;
+}
+
+.custom-file-upload {
+  font-family: 'IBM Plex Mono' !important;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #363636;
+  filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.25));
+  font-weight: normal;
+  width: 100%;
+  color: white;
+  text-align: center;
+}

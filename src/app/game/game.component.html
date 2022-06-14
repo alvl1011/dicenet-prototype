@@ -1,0 +1,17 @@
+<ion-card>
+  <img *ngIf="game.image && !game.imagePreview" [src]="game.image"/>
+  <img *ngIf="!game.image || game.imagePreview" [src]="game.imagePreview"/>
+  <ion-card-content>
+    <div class="blurred"></div>
+    <ion-card-title>
+      {{ game.title }}
+    </ion-card-title>
+    <div class="d-flex justify-content-between">
+      <p>
+        {{ game.description }} ...
+      </p>
+      <img *ngIf="game.logo && !game.logoPreview" class="logo" [src]="game.logo"/>
+      <img *ngIf="!game.logo || game.logoPreview" class="logo" [src]="game.logoPreview"/>
+    </div>
+  </ion-card-content>
+</ion-card>

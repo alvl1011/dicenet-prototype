@@ -24,3 +24,13 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import "theme/base.scss";
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/IBMPlexMono-Medium.ttf');
+}

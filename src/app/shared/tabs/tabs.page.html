@@ -1,0 +1,39 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom" class="background">
+    <ion-tab-button tab="news" [class.active-item]="selectedPath.includes('news')">
+      <ion-thumbnail>
+        <ion-img src="../../assets/images/Newspaper.svg"></ion-img>
+      </ion-thumbnail>
+      <ion-label>News</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="collection" [class.active-item]="selectedPath.includes('collection')">
+      <ion-thumbnail>
+        <ion-img src="../../assets/images/Layer.svg"></ion-img>
+      </ion-thumbnail>
+      <ion-label>Games</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="social" [class.active-item]="selectedPath.includes('social')">
+      <ion-thumbnail>
+        <ion-img src="../../assets/images/chat.svg"></ion-img>
+      </ion-thumbnail>
+      <ion-label>Social</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tournaments" [class.active-item]="selectedPath.includes('tournaments')">
+      <ion-thumbnail>
+        <ion-img src="../../assets/images/award.svg"></ion-img>
+      </ion-thumbnail>
+      <ion-label>Events</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile" [class.active-item]="selectedPath.includes('profile')">
+      <ion-thumbnail>
+        <ion-img src="../../assets/images/account.svg"></ion-img>
+      </ion-thumbnail>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,0 +1,38 @@
+ion-content {
+  font-family: 'IBM Plex Mono' !important;
+  --background: url(../../assets/images/dice-back.svg) rgba(28, 28, 28) 105% 105% no-repeat;
+  --color: white;
+}
+
+ion-searchbar {
+  --background: rgb(68, 68, 68);
+  --color: white;
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  position: fixed;
+  z-index: 1;
+}
+
+ion-toolbar {
+  background-color: #161616;
+}
+
+ion-buttons {
+  ion-button {
+    position: fixed;
+    float: end;
+    font-size: 28px;
+  }
+}
+
+.rents {
+  ion-button {
+    font-family: 'IBM Plex Mono' !important;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #E31C25;
+    filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.25));
+    font-weight: normal;
+  }
+}

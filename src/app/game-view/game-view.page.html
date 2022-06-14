@@ -1,0 +1,41 @@
+<app-header title="Game detail" [isMainScreen]="false"></app-header>
+<ion-content>
+  <ion-card>
+    <img *ngIf="game.image && !game.imagePreview" [src]="game.image"/>
+    <img *ngIf="!game.image || game.imagePreview" [src]="game.imagePreview"/>
+    <ion-card-content>
+      <div class="blurred"></div>
+      <ion-card-title>
+        {{ game.title }}
+      </ion-card-title>
+      <div class="d-flex justify-content-between">
+        <p class="pt-2">
+          <ion-icon name="calendar"></ion-icon>
+          <strong> Added at: </strong>
+          {{ game.createdAt | date: 'dd-MM-YYYY' }}
+        </p>
+        <img *ngIf="game.logo && !game.logoPreview" class="logo" [src]="game.logo"/>
+        <img *ngIf="!game.logo || game.logoPreview" class="logo" [src]="game.logoPreview"/>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-textarea>
+    <hr>
+    <div>
+      {{ game.longDescription }}
+    </div>
+    <hr>
+  </ion-textarea>
+  <ion-buttons class="d-flex justify-content-between bottom-0">
+    <ion-button (click)="onEdit()">EDIT</ion-button>
+    <div class="d-flex flex-column gap-2">
+      <ion-button id="trigger-button">RENT</ion-button>
+      <ion-button class="red" (click)="onDelete()">DELETE</ion-button>
+    </div>
+  </ion-buttons>
+  <ion-modal trigger="trigger-button" [swipeToClose]="true" [presentingElement]="routerOutlet.nativeEl">
+    <ng-template>
+      <app-modal [game]="game"></app-modal>
+    </ng-template>
+  </ion-modal>
+</ion-content>

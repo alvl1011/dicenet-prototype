@@ -1,0 +1,54 @@
+@import '../../../theme/base.scss';
+
+
+
+ion-tabs {
+  font-family: 'IBM Plex Mono' !important;
+
+
+  .background {
+    --background: linear-gradient(180deg, #1c1c1c 3px, #161616 0px);
+    --color: white;
+  }
+
+  ion-tab-bar {
+    border: none;
+  }
+
+  ion-tab-button {
+    --color-selected: #E31C25;
+
+    &::before {
+      background-color: transparent;
+      display: block;
+      content: "";
+      margin: 0 auto;
+      width: 20px;
+      height: 2px;
+    }
+
+    &.tab-selected::before {
+      --background: #E31C25;
+    }
+  }
+
+  ion-badge {
+    --background: #E31C25;
+  }
+  ion-label {
+    font-size: 10px;
+  }
+
+  ion-thumbnail {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+  }
+}
+
+.active-item {
+  color: white;
+  --background: #E31C25 !important;
+  border: 2px solid #E31C25;
+  border-radius: 10px 10px 0 0;
+}
