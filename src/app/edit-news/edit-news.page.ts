@@ -14,11 +14,11 @@ export class EditNewsPage implements OnInit {
   newsTitle: string;
   newsContent: string;
   image?: string;
-  user: User;
+  user?: User;
   createdAt: Date;
   imagePreview?: string;
-  likes: number;
-  views: number;
+  likes?: number;
+  views?: number;
   imageFile: string;
 
   constructor(private newsService: NewsService,
@@ -32,6 +32,7 @@ export class EditNewsPage implements OnInit {
 
     if (this.router.getCurrentNavigation().extras.state) {
       this.id = this.router.getCurrentNavigation().extras.state.news.id;
+      this.user = this.router.getCurrentNavigation().extras.state.news.user;
       this.newsTitle = this.router.getCurrentNavigation().extras.state.news.newsTitle;
       this.newsContent = this.router.getCurrentNavigation().extras.state.news.newsContent;
       this.image = this.router.getCurrentNavigation().extras.state.news.image;

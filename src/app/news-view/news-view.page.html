@@ -36,22 +36,24 @@
     </div>
     <hr>
   </ion-textarea>
-  <ion-card-content>
+  <div>
     <div class="d-flex justify-content-between">
-      <p class="pt-2">
+      <p class="p-2 ps-4">
         <ion-icon name="heart-outline"></ion-icon>
         {{ news.likes }}
       </p>
-      <ion-buttons class="round-buttons d-flex flex-row gap-2">
-        <ion-button [class.red]="isLiked()" (click)="onLike()" id="trigger-people" class="mb-2 round">
-          <ion-icon name="heart-outline" style="font-size: 32px"></ion-icon>
-        </ion-button>
-        <ion-button (click)="onMessage()" class="round">
-          <ion-icon name="paper-plane-outline" style="font-size: 32px"></ion-icon>
-        </ion-button>
+      <ion-buttons class="d-flex justify-content-end align-items-center">
+        <div class="round-buttons d-flex flex-row gap-2">
+          <ion-button [class.red]="isLiked()" (click)="onLike()" id="trigger-people" class="mb-2 round">
+            <ion-icon name="heart-outline" style="font-size: 32px"></ion-icon>
+          </ion-button>
+          <ion-button (click)="onMessage()" class="round">
+            <ion-icon name="paper-plane-outline" style="font-size: 32px"></ion-icon>
+          </ion-button>
+        </div>
       </ion-buttons>
     </div>
-  </ion-card-content>
+  </div>
   <ion-buttons class="d-flex justify-content-between bottom-0">
     <ion-button (click)="onEdit()">EDIT</ion-button>
     <div class="d-flex flex-column gap-2">

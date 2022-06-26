@@ -11,6 +11,7 @@ import { UserService } from "../services/user.service";
 })
 export class EditEventPage implements OnInit {
 
+  id: number;
   title: string;
   location: string;
   date: Date;
@@ -31,6 +32,7 @@ export class EditEventPage implements OnInit {
 
   getNavigationExtras() {
     if (this.router.getCurrentNavigation().extras.state) {
+      this.id = this.router.getCurrentNavigation().extras.state.event.id;
       this.description = this.router.getCurrentNavigation().extras.state.event.description;
       this.title = this.router.getCurrentNavigation().extras.state.event.title;
       this.location = this.router.getCurrentNavigation().extras.state.event.location;
@@ -61,9 +63,8 @@ export class EditEventPage implements OnInit {
   }
 
   async submitForm() {
-    let previousId = this.eventService.getLastIndex();
-    this.eventService.addEvent({
-                                 id: ++previousId,
+    this.eventService.editEvent({
+                                 id: this.id,
                                  title: this.title,
                                  status: 'AWAIT',
                                  location: this.location,

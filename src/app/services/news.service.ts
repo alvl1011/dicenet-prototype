@@ -33,6 +33,29 @@ export class NewsService {
       createdAt: new Date(),
       likes: 15,
       views: 51
+    },
+    {
+      id: 1,
+      newsTitle: 'Test',
+      newsContent: 'Test Content',
+      image: 'assets/images/dnd.jpg',
+      user: {
+        id: 0,
+        firstname: 'Vladimir',
+        lastname: 'Alyoshin',
+        birthdate: new Date(2000, 12, 13),
+        email: 'alvl1011@h-ka.de',
+        password: 'password',
+        career: 'Student',
+        city: 'Karlsruhe',
+        nickname: 'vladi',
+        games: 2,
+        profileImage: 'assets/images/avatar.png',
+        isFriend: true
+      },
+      createdAt: new Date(),
+      likes: 15,
+      views: 51
     }
   ];
 
@@ -75,7 +98,7 @@ export class NewsService {
   public editNews(singleNews: News) {
     const updateItem = this.news.find(this.findIndexToUpdate, singleNews.id);
     const index = this.news.indexOf(updateItem);
-    this.news$[index] = singleNews;
+    this.news[index] = singleNews;
   }
 
   public deleteNews(news: News) {

@@ -10,7 +10,7 @@ import {NavigationService} from "../services/navigation.service";
   styleUrls: ['./news-view.page.scss'],
 })
 export class NewsViewPage implements OnInit {
-  news: News = new News();
+  news: News;
   like=false;
   constructor(private newService: NewsService,
               private navigation: NavigationService,

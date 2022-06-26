@@ -5,9 +5,9 @@ export class News {
   newsTitle: string;
   newsContent: string;
   image?: string;
-  user: User;
+  user?: User;
   createdAt: Date;
   imagePreview?: string;
-  likes: number;
-  views: number;
+  likes?: number;
+  views?: number;
 }
