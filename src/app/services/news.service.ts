@@ -13,9 +13,13 @@ export class NewsService {
   private news: News[] = [
     {
       id: 0,
-      newsTitle: 'Test',
-      newsContent: 'Test Content',
-      image: 'assets/images/dnd.jpg',
+      category: 'Events',
+      newsTitle: 'Tournament “Z-10 Adventure”',
+      // eslint-disable-next-line max-len
+      newsContent: 'Last week the tournament "Z-10 Adventure" took place in Karlsruhe, in which 10 D&D teams from Baden-Württemberg took part. The prize fund was 1000 €. Details in future posts.' +
+        // eslint-disable-next-line max-len
+        'The last time such tournaments were held in Stuttgart, but recently a huge number of board game fans have appeared in Karlsruhe. Every 3 resident, according to statistics for 2022, has at least a “Monopoly” at home.',
+      imagePreview: 'assets/images/newspic.png',
       user: {
         id: 0,
         firstname: 'Vladimir',
@@ -36,9 +40,11 @@ export class NewsService {
     },
     {
       id: 1,
-      newsTitle: 'Test',
-      newsContent: 'Test Content',
-      image: 'assets/images/dnd.jpg',
+      category: 'Tabletop',
+      newsTitle: 'Monopoly - new trend',
+      // eslint-disable-next-line max-len
+      newsContent: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      imagePreview: 'assets/images/monopoly.png',
       user: {
         id: 0,
         firstname: 'Vladimir',
@@ -69,13 +75,15 @@ export class NewsService {
     return of(this.news);
   }
 
-  public addNews(newsTitle: string, newsContent: string, user: User,) {
+  public addNews(newsTitle: string, newsContent: string, user: User, imagePreview: string, category: string) {
     let index = this.getLastIndex();
     const news: News = {
       id: ++index,
+      category,
       newsTitle,
       newsContent,
       user,
+      imagePreview,
       createdAt: new Date('21 Jun 2022 08:14:00 UTC'),
       likes: 0,
       views: 0,

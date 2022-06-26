@@ -11,7 +11,11 @@ const routes: Routes = [
   {
     path: 'news-view',
     loadChildren: () => import('../news-view/news-view.module').then( m => m.NewsViewPageModule)
-  }
+  },
+  {
+    path: 'create-news',
+    loadChildren: () => import('../create-news/create-news.module').then( m => m.CreateNewsPageModule)
+  },
 ];
 
 @NgModule({

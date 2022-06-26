@@ -4,19 +4,6 @@ ion-content {
   --color: white;
 }
 
-.round-buttons {
-  ion-button.round {
-    background-color: #363636;
-    filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.25));
-    border: 1px solid transparent;
-    font-size: 14px;
-    border-radius: 50% !important;
-    padding: 0 2px;
-    width: 45px;
-    height: 45px;
-  }
-}
-
 ion-card {
   font-family: 'IBM Plex Mono' !important;
   color: white;
@@ -41,14 +28,10 @@ ion-card {
     position: relative;
     top: -94px;
 
-    p {
-      position: relative;
-      font-size: 9px;
-      color: rgba(255, 255, 255, 0.85);
-    }
-
     .logo {
       position: relative;
+      float: right;
+      margin-top: 20px;
       width: auto;
       height: 42px;
       top: -12px;
@@ -57,38 +40,45 @@ ion-card {
       }
     }
 
-    .blurred {
+    p {
+      position: relative;
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+
+    .rectangle {
       position: absolute;
       width: 100%;
       height: 100px;
-      top: 0;
-      left: 4px;
+      top: 35px;
+      left: 0;
       background: rgba(0, 0, 0, 0.7);
-      filter: blur(4px);
     }
     ion-card-title {
       font-size: 14px;
-      font-weight: 900;
+      font-weight: 400;
       color: white;
     }
   }
 
 }
 
-.textarea {
-  color: white;
-  font-family: 'IBM Plex Mono' !important;
-  font-size: 10px;
+ion-list {
+  background-color: transparent;
 
-  hr {
-    border: 1px solid white;
-    border-radius: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  div {
-    text-align: left;
+  ion-item {
+    --background: transparent;
     padding: 0 20px;
+    --ion-border-color: rgba(255, 255, 255, 0.5);
+    --highlight-color-focused: white;
+
+  }
+
+  ion-label {
+    font-family: 'IBM Plex Mono' !important;
+    font-size: 14px;
+    --color: white;
   }
 }
 
@@ -98,23 +88,57 @@ ion-buttons {
   ion-button {
     font-family: 'IBM Plex Mono' !important;
     border-radius: 5px;
-    padding: 3px 8px;
+    padding: 8px;
     background-color: #363636;
     filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.25));
-    font-weight: bold;
+    font-weight: normal;
   }
 }
-
-
 
 .red {
   background-color: #E31C25 !important;
 }
 
-ion-modal {
-  margin: auto;
-  padding: 0 10px;
-  width: auto;
-  height: 423px;
-  --background: rgba(101, 101, 101, 0.8);
+ion-item.item-has-focus > ion-label{
+  color: white !important;
+}
+
+.has-focus {
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  color: white
+}
+
+ion-input {
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  color: white
+}
+
+ion-textarea {
+  --placeholder-color: white !important;
+  font-family: 'IBM Plex Mono' !important;
+  color: white;
+  font-size: 14px;
+  padding-top: 30px;
+}
+
+input[type="file"] {
+  display: none !important;
+}
+
+.custom-file-upload {
+  font-family: 'IBM Plex Mono' !important;
+  padding: 8px;
+  font-weight: normal;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.avatar {
+  width: 98px;
+  height: 98px;
+  border-radius: 50%;
+  object-fit: cover;
 }

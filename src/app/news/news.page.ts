@@ -14,6 +14,10 @@ export class NewsPage implements OnInit {
   user: User;
   news: News[] = [];
 
+  isActiveAll= true;
+  isActiveTableTop = false;
+  isActiveEvents = false;
+
   constructor(private router: Router,
               private newsService: NewsService) { }
 
@@ -41,9 +45,40 @@ export class NewsPage implements OnInit {
     }
   }
 
+  doRefresh(event) {
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+
+  changeState(category: string) {
+    if(category === 'All') {
+      this.isActiveAll = true;
+      this.isActiveTableTop = false;
+      this.isActiveEvents = false;
+    } else if(category === 'Tabletop') {
+      this.isActiveAll = false;
+      this.isActiveTableTop = true;
+      this.isActiveEvents = false;
+    } else if(category === 'Events') {
+      this.isActiveAll = false;
+      this.isActiveTableTop = false;
+      this.isActiveEvents = true;
+    }
+  }
+
+  nextPage() {
+    this.router.navigate(['/home/tabs/collection']);
+  }
+
   onClick(news) {
     this.newsService.onChangeTitle(news);
     this.router.navigate(['/home/tabs/news/news-view']);
+  }
+
+  addNews() {
+    this.router.navigate(['/home/tabs/news/create-news']);
   }
 
 }

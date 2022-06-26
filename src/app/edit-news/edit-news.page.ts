@@ -19,7 +19,9 @@ export class EditNewsPage implements OnInit {
   imagePreview?: string;
   likes?: number;
   views?: number;
-  imageFile: string;
+  imageFile: File;
+
+  category: string;
 
   constructor(private newsService: NewsService,
               private navigation: NavigationService,
@@ -32,6 +34,7 @@ export class EditNewsPage implements OnInit {
 
     if (this.router.getCurrentNavigation().extras.state) {
       this.id = this.router.getCurrentNavigation().extras.state.news.id;
+      this.category = this.router.getCurrentNavigation().extras.state.news.category;
       this.user = this.router.getCurrentNavigation().extras.state.news.user;
       this.newsTitle = this.router.getCurrentNavigation().extras.state.news.newsTitle;
       this.newsContent = this.router.getCurrentNavigation().extras.state.news.newsContent;
@@ -44,7 +47,7 @@ export class EditNewsPage implements OnInit {
       this.imageFile = this.router.getCurrentNavigation().extras.state.news.imageFile;
     }
   }
-  /**
+
   onFileChange(fileChangeEvent) {
     if(fileChangeEvent.target.id === 'image') {
       this.imageFile = fileChangeEvent.target.files[0];
@@ -57,23 +60,13 @@ export class EditNewsPage implements OnInit {
 
         reader.readAsDataURL(this.imageFile);
       }
-    } else {
-      this.logoFile = fileChangeEvent.target.files[0];
-      if (typeof (FileReader) !== 'undefined') {
-        const reader = new FileReader();
-
-        reader.onload = (e: any) => {
-          this.logoPreview = e.target.result;
-        };
-
-        reader.readAsDataURL(this.logoFile);
-      }
     }
-  }**/
+  }
 
   async submitForm() {
     this.newsService.editNews({
       id: this.id,
+      category: this.category,
       user: this.user,
       newsTitle: this.newsTitle,
       newsContent: this.newsContent,

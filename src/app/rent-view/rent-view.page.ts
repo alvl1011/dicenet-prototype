@@ -27,6 +27,10 @@ export class RentViewPage implements OnInit {
     }
   }
 
+  toMessages() {
+    this.router.navigate(['/home/tabs/social']);
+  }
+
   navigateToGame(game) {
     this.gameService.onChangeTitle(game);
     this.router.navigate(['/home/tabs/collection/game-view']);

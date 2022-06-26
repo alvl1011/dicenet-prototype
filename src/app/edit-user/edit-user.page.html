@@ -1,0 +1,59 @@
+<app-header title="Edit profile" [isMainScreen]="false"></app-header>
+
+<ion-content>
+  <div class="d-flex flex-column align-items-center pt-4">
+    <label class="custom-file-upload mt-2 ps-2 pe-2 w-75">
+      <input id="image" type="file" (change)="onFileChange($event)"/>
+      <img class="avatar" *ngIf="user.profileImage" src="{{ user.profileImage }}">
+      <img class="avatar" *ngIf="!user.profileImage" src="assets/images/add-photo.png"/>
+    </label>
+    <div class=" text-center pt-3">
+      Click to change photo
+    </div>
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="person-outline"></ion-icon>
+        Firstname
+      </ion-label>
+      <ion-input [(ngModel)]="firstname" placeholder="Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="person-outline"></ion-icon>
+        Lastname
+      </ion-label>
+      <ion-input [(ngModel)]="lastname" placeholder="Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="pencil-outline"></ion-icon>
+        Career
+      </ion-label>
+      <ion-input [(ngModel)]="career" placeholder="Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="calendar-outline"></ion-icon>
+        Birthday
+      </ion-label>
+      <ion-input [(ngModel)]="date" placeholder="Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="location-outline"></ion-icon>
+        Location
+      </ion-label>
+      <ion-input [(ngModel)]="location" placeholder="Name"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-buttons class="d-flex justify-content-between bottom-0 pt-3">
+    <ion-button (click)="onBack()">
+      CANCEL
+    </ion-button>
+    <ion-button class="red" (click)="submitForm()">
+      SAVE
+    </ion-button>
+  </ion-buttons>
+</ion-content>

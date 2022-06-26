@@ -13,6 +13,25 @@ ion-searchbar {
   z-index: 1;
 }
 
+ion-buttons {
+  ion-button {
+    position: fixed;
+    float: end;
+    font-size: 28px;
+  }
+}
+
+.categories {
+  background-color: #161616;
+
+  .active {
+    color: white;
+    background-color: #E31C25;
+    border: 2px solid #E31C25;
+    border-radius: 0 0 10px 10px;
+  }
+}
+
 .image-preview {
   width: 140px;
   height: 135px;

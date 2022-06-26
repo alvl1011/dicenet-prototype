@@ -91,4 +91,10 @@ export class UserService {
   public addUser(user: User) {
     this.users.push(user);
   }
+
+  public editUser(user: User) {
+    const updateItem = this.users.find(this.findIndexToUpdate, user.id);
+    const index = this.users.indexOf(updateItem);
+    this.users[index] = user;
+  }
 }
