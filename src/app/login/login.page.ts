@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from "../services/user.service";
-import { Router } from "@angular/router";
+import { NavigationExtras, Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,6 +11,8 @@ export class LoginPage implements OnInit {
 
   @Input() email = '';
   @Input() password = '';
+  isEmailValid = true;
+  isPasswordValid = true;
 
   constructor(private userService: UserService,
               private router: Router) { }
@@ -20,10 +22,30 @@ export class LoginPage implements OnInit {
 
   onLogin() {
     this.userService.getUsers().subscribe((users) => {
-      users.forEach((user) => {
+      users.every((user) => {
         if(user.email === this.email && user.password === this.password) {
+          this.isEmailValid = true;
+          this.isPasswordValid = true;
           this.userService.onChangeUser(user);
-          this.router.navigate(['/home/tabs/news']);
+          const navigationExtras: NavigationExtras = {
+            state: {
+              openPop: true,
+              message: 'Login successful.'
+            }
+          };
+          this.router.navigate(['/home/tabs/collection'], navigationExtras);
+        } else {
+          if(user.email === this.email) {
+            this.isEmailValid = true;
+          } else {
+            this.isEmailValid = false;
+          }
+          if(user.password === this.password) {
+            this.isPasswordValid = true;
+          } else {
+            this.isPasswordValid = false;
+          }
+          return false;
         }
       });
     });

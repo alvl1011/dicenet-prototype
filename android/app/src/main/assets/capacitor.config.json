@@ -1,6 +1,21 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "dicenet-prototype",
+	"appId": "com.group.dicenet",
+	"appName": "Dicenet",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false
+		},
+		"LocalNotifications": {
+			"smallIcon": "ic_stat_icon_config_sample",
+			"iconColor": "#CE0B7C"
+		},
+		"PushNotifications": {
+			"presentationOptions": [
+				"badge",
+				"alert",
+				"sound"
+			]
+		}
+	}
 }

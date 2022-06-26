@@ -22,6 +22,8 @@ export class HeaderComponent implements OnInit {
 
   @Input() isMainScreen? = true;
 
+  @Input() isMessageView? = false;
+
   constructor(private navigation: NavigationService,
               private gameService: GameService) { }
 

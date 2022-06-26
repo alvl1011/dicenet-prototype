@@ -18,15 +18,19 @@ const routes: Routes = [
       },
       {
         path: 'social',
-        loadChildren: () => import('../../game-collection/game-collection.module').then(m => m.GameCollectionPageModule)
+        loadChildren: () => import('../../social/social.module').then( m => m.SocialPageModule)
       },
       {
-        path: 'tournaments',
-        loadChildren: () => import('../../game-collection/game-collection.module').then(m => m.GameCollectionPageModule)
+        path: 'events',
+        loadChildren: () => import('../../events/events.module').then( m => m.EventsPageModule)
       },
       {
         path: 'profile',
         loadChildren: () => import('../../game-collection/game-collection.module').then(m => m.GameCollectionPageModule)
+      },
+      {
+        path: 'error',
+        loadChildren: () => import('../../error/error.module').then( m => m.ErrorPageModule)
       }
     ]
   },

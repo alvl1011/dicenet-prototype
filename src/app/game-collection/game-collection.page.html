@@ -1,5 +1,13 @@
 <app-header title="Game Collection"></app-header>
-<ion-content>
+<ion-content appSideSwipe
+             (swipeLeft)="previousPage()"
+             (swipeRight)="nextPage()">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
   <div *ngFor="let game of games">
     <app-game [game]="game"
               (click)="onClick(game)"

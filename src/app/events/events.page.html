@@ -1,0 +1,39 @@
+<app-header title="Events"></app-header>
+<ion-content appSideSwipe
+             (swipeLeft)="previousPage()"
+             (swipeRight)="nextPage()">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div class="rent d-flex justify-content-left"
+       (click)="onClick(event)"
+       *ngFor="let event of events">
+    <img class="image-preview" [src]="event.imagePreview"/>
+    <div class="ps-2 pt-2">
+      <h5>{{ event.title }}</h5>
+      <div class="text">
+        <ion-icon name="location-outline"></ion-icon> {{ event.location }}
+      </div>
+      <div class="text">
+        <ion-icon name="calendar"></ion-icon> {{ event.date | date: 'dd-MM-YYYY' }}
+      </div>
+      <hr class="mt-3">
+      <div class="d-flex justify-content-between">
+        <div class="status fw-bold">Status: </div>
+        <div
+          [class.status-state-success]="event.status === 'ACCEPTED'"
+          [class.status-state-await]="event.status === 'AWAIT'"
+          [class.status-state-failed]="event.status === 'FAILED'"
+          class="status-state">{{ event.status }}</div>
+      </div>
+    </div>
+  </div>
+  <ion-buttons class="d-flex justify-content-end pt-4">
+    <ion-button style="font-size: 28px" (click)="addEvent()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-content>

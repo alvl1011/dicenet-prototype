@@ -4,6 +4,15 @@ ion-content {
   --color: white;
 }
 
+ion-refresher ion-refresher-content {
+  background: #161616;
+  --color:#FFF!important;
+  --ion-text-color: #fff !important;
+  .refresher-pulling-icon {
+    color: #fff !important;
+  }
+}
+
 .image-preview {
   width: 140px;
   height: 135px;

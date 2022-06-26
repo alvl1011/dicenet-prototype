@@ -33,7 +33,8 @@ export class RentsService {
         city: 'Karlsruhe',
         nickname: 'vladi',
         games: 2,
-        profileImage: 'assets/images/avatar.png'
+        profileImage: 'assets/images/avatar.png',
+        isFriend: false
       },
       status: 'OK',
       date: new Date(),

@@ -1,9 +1,9 @@
-import { Component, EventEmitter, OnChanges, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GameService } from '../services/game.service';
-import { Game } from "../shared/data-models/gameModel";
-import { Subscription } from "rxjs";
-import { HeaderComponent } from "../shared/header/header.component";
+import { Game } from '../shared/data-models/gameModel';
+import { Subscription } from 'rxjs';
+import { PushNotifications } from '@capacitor/push-notifications';
 
 @Component({
   selector: 'app-game-collection',
@@ -14,6 +14,8 @@ export class GameCollectionPage implements OnInit, OnDestroy, OnChanges {
 
   games: Game[] = [];
   subscription: Subscription;
+  popoverMessage = 'hello';
+  isPopoverOpen = false;
 
 
   constructor(private router: Router,
@@ -24,6 +26,34 @@ export class GameCollectionPage implements OnInit, OnDestroy, OnChanges {
       .subscribe((games) => {
         this.games = games;
       });
+    this.resetBadgeCount();
+    this.getNavigationExtras();
+  }
+
+  doRefresh(event) {
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+
+  nextPage() {
+    this.router.navigate(['/home/tabs/social']);
+  }
+
+  previousPage() {
+    this.router.navigate(['/home/tabs/news']);
+  }
+
+  getNavigationExtras() {
+    if (this.router.getCurrentNavigation().extras.state) {
+      this.isPopoverOpen = this.router.getCurrentNavigation().extras.state.openPop;
+      this.popoverMessage = this.router.getCurrentNavigation().extras.state.message;
+    }
+  }
+
+  resetBadgeCount() {
+    PushNotifications.removeAllDeliveredNotifications().then(r => console.log(r));
   }
 
   ngOnChanges() {

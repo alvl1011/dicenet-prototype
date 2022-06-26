@@ -29,13 +29,16 @@
   <ion-buttons class="d-flex justify-content-between bottom-0">
     <ion-button (click)="onEdit()">EDIT</ion-button>
     <div class="d-flex flex-column gap-2">
-      <ion-button id="trigger-button">RENT</ion-button>
+      <ion-button id="trigger-button" expand="block">RENT</ion-button>
       <ion-button class="red" (click)="onDelete()">DELETE</ion-button>
     </div>
   </ion-buttons>
-  <ion-modal trigger="trigger-button" [swipeToClose]="true" [presentingElement]="routerOutlet.nativeEl">
+  <ion-modal trigger="trigger-button"
+             [swipeToClose]="true"
+             [presentingElement]="routerOutlet.nativeEl"
+             [initialBreakpoint]="0.5">
     <ng-template>
-      <app-modal [game]="game"></app-modal>
+      <app-modal [title]="'Rent to:'" [isMessage]="false"  [game]="game"></app-modal>
     </ng-template>
   </ion-modal>
 </ion-content>
