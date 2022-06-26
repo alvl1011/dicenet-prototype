@@ -1,0 +1,42 @@
+.game-title {
+  background-color: #161616;
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+  color: white;
+}
+ion-icon {
+  font-size: 24px;
+}
+
+.main-modal {
+  background-color: #656565;
+}
+
+.user {
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: #111111;
+  border: 1px solid #111111;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 5px;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+
+ion-searchbar {
+  --background: rgb(68, 68, 68);
+  --color: white;
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  z-index: 1;
+}

@@ -1,0 +1,78 @@
+ion-content {
+  font-family: 'IBM Plex Mono' !important;
+  --background: url(../../assets/images/dice-back.svg) rgba(28, 28, 28) 105% 105% no-repeat;
+  --color: white;
+}
+
+.image-preview {
+  width: 140px;
+  height: 135px;
+  box-shadow: rgba(13, 13, 13, 0.82);
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.rent {
+  background-color: #161616;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(13, 13, 13, 0.82);
+}
+
+h5 {
+  text-align: left;
+  font-size: 15px;
+  padding-right: 35px;
+}
+
+.text {
+  font-size: 9px;
+  font-weight: normal;
+}
+
+hr {
+  margin-bottom: 10px;
+}
+
+.status {
+  font-size: 12px;
+}
+
+.status-state-success {
+  background-color: #04F06A;
+  font-size: 10px;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  padding: 2px 10px;
+  margin-right: 15px;
+}
+
+.status-state-failed {
+  background-color: #721014;
+  font-size: 10px;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  padding: 2px 10px;
+  margin-right: 15px;
+}
+
+.status-state-await {
+  background-color: #cbd03f;
+  font-size: 10px;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  padding: 2px 10px;
+  margin-right: 15px;
+}
+
+ion-refresher ion-refresher-content {
+  background: #161616;
+  --color:#FFF!important;
+  --ion-text-color: #fff !important;
+  .refresher-pulling-icon {
+    color: #fff !important;
+  }
+}

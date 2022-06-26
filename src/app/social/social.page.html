@@ -1,0 +1,79 @@
+<app-header title="Messages"></app-header>
+<ion-content appSideSwipe
+             (swipeLeft)="previousPage()"
+             (swipeRight)="nextPage()">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div class="categories d-flex justify-content-around">
+    <div [class.active]="isActiveChats" (click)="changeState()" class="text-center w-50 pt-2 pb-2">Chats</div>
+    <div [class.active]="isActiveGroups" (click)="changeState()" class="text-center w-50 pt-2 pb-2">Groups</div>
+  </div>
+<div class="chats" *ngIf="isActiveChats">
+  <ion-item lines="none" *ngFor="let dialog of dialogs">
+    <ion-avatar (click)="toFriendView(getUser(dialog.companionId))" slot="start">
+      <img src="{{ getUser(dialog.companionId).profileImage }}" alt="avatar">
+    </ion-avatar>
+    <div (click)="toMessage(dialog)">
+      <ion-label class="ion-text-nowrap">
+        <h2>{{ getUser(dialog.companionId).firstname + " " +  getUser(dialog.companionId).lastname }}</h2>
+        <p>{{ dialog.messages[dialog.messages.length - 1].text }}</p>
+      </ion-label>
+      <div class="info-div d-flex">
+        <div>
+          <ion-icon *ngIf="!dialog.messages[dialog.messages.length - 1].isRead" name="checkmark-outline"></ion-icon>
+          <ion-icon *ngIf="dialog.messages[dialog.messages.length - 1].isRead" name="checkmark-done-outline"></ion-icon>
+        </div>
+        <p>{{ dialog.messages[dialog.messages.length - 1].sTime | date: 'hh:mm' }}</p>
+      </div>
+    </div>
+  </ion-item>
+</div>
+  <div class="chats" *ngIf="isActiveGroups">
+    <ion-item lines="none" *ngFor="let group of groups">
+      <ion-avatar (click)="toGroupView(group)" slot="start">
+        <img src="{{ group.profileImage }}" alt="avatar">
+      </ion-avatar>
+      <div (click)="toGroupMessage(group)">
+        <ion-label class="ion-text-nowrap">
+          <h2>{{ group.name }}</h2>
+          <p>{{ group.messages[group.messages.length - 1].text }}</p>
+        </ion-label>
+        <div class="info-div d-flex">
+          <div>
+            <ion-icon *ngIf="!group.messages[group.messages.length - 1].isRead" name="checkmark-outline"></ion-icon>
+            <ion-icon *ngIf="group.messages[group.messages.length - 1].isRead" name="checkmark-done-outline"></ion-icon>
+          </div>
+          <p>{{ group.messages[group.messages.length - 1].sTime | date: 'hh:mm' }}</p>
+        </div>
+      </div>
+    </ion-item>
+  </div>
+  <ion-buttons class="d-flex flex-column align-items-end pt-4 pe-2">
+    <ion-button (click)="createGroup()" [class.d-none]="!isActiveGroups" class="mb-2">
+      <ion-icon name="people-outline" style="font-size: 32px"></ion-icon>
+    </ion-button>
+    <ion-button [class.d-none]="!isActiveChats" id="trigger-people" class="mb-2">
+      <ion-icon name="person-add-outline" style="font-size: 32px"></ion-icon>
+    </ion-button>
+    <ion-button id="trigger-mail">
+      <ion-icon name="mail-outline" style="font-size: 32px"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-modal trigger="trigger-mail" [initialBreakpoint]="0.5" [swipeToClose]="true" [presentingElement]="routerOutlet.nativeEl">
+    <ng-template>
+      <app-modal [isMessage]="true" [title]="'Type message'"></app-modal>
+    </ng-template>
+  </ion-modal>
+  <ion-modal trigger="trigger-people" [initialBreakpoint]="0.5"
+             [swipeToClose]="true" [presentingElement]="routerOutlet.nativeEl">
+    <ng-template>
+      <app-modal-add-friend></app-modal-add-friend>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+
+

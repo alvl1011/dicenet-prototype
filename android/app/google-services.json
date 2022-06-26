@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "574995464161",
+    "project_id": "dicenet-push",
+    "storage_bucket": "dicenet-push.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574995464161:android:888d6fc2e6764bfaba9ca0",
+        "android_client_info": {
+          "package_name": "com.group.dicenet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574995464161-u6f6uten41nl030mnq4rdm3jnm61b9sd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSxYUrumWr7ryAIGVTgPfMMz_AkWTESOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574995464161-u6f6uten41nl030mnq4rdm3jnm61b9sd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

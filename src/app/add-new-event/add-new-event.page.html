@@ -1,0 +1,51 @@
+<app-header title="Create event" [isMainScreen]="false"></app-header>
+<ion-content>
+  <ion-card>
+    <img *ngIf="imagePreview" src="{{ imagePreview }}">
+    <img *ngIf="!imagePreview" src="assets/images/default.png"/>
+  </ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="pencil-outline"></ion-icon>
+        Title
+      </ion-label>
+      <ion-input [(ngModel)]="title" placeholder="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="location-outline"></ion-icon>
+        Location
+      </ion-label>
+      <ion-input [(ngModel)]="location" placeholder="Location"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="calendar-outline"></ion-icon>
+        Date
+      </ion-label>
+      <ion-input type="date" [(ngModel)]="date" placeholder="Date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="create-outline"></ion-icon>
+        Description
+      </ion-label>
+      <ion-textarea [(ngModel)]="description" placeholder="Add description to game"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <div class="d-flex flex-column align-items-center">
+    <label class="custom-file-upload mt-2 ps-2 pe-2 w-75">
+      <input id="image" type="file" (change)="onFileChange($event)"/>
+      UPLOAD IMAGE
+    </label>
+  </div>
+  <ion-buttons class="d-flex justify-content-between bottom-0 pt-3">
+    <ion-button (click)="onBack()">
+      CANCEL
+    </ion-button>
+    <ion-button class="red" (click)="submitForm()">
+      CREATE
+    </ion-button>
+  </ion-buttons>
+</ion-content>

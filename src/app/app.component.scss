@@ -1,1 +1,5 @@
 @import "src/theme/base.scss";
+
+ion-router-outlet {
+  background-color: #111111 !important;
+}

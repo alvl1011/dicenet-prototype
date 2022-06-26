@@ -10,4 +10,6 @@ export class User {
   nickname?: string;
   games?: number;
   profileImage?: string;
+  isFriend: boolean;
+  status?: string;
 }

@@ -22,10 +22,11 @@ export class UserService {
       city: 'Karlsruhe',
       nickname: 'vladi',
       games: 2,
-      profileImage: 'assets/images/avatar.png'
+      profileImage: 'assets/images/avatar.png',
+      isFriend: true
     },
     {
-      id: 0,
+      id: 1,
       firstname: 'Alexander',
       lastname: 'Grischancew',
       birthdate: new Date(1996, 11, 11),
@@ -35,7 +36,22 @@ export class UserService {
       city: 'Karlsruhe',
       nickname: 'alex',
       games: 3,
-      profileImage: 'assets/images/avatar.png'
+      profileImage: 'assets/images/avatar.png',
+      isFriend: true
+    },
+    {
+      id: 2,
+      firstname: 'Dicenet',
+      lastname: 'Bot',
+      birthdate: new Date(1900, 1, 1),
+      email: 'bot@dicenet.com',
+      password: '123FuckSkinBags',
+      career: 'Bot',
+      city: 'Unknown',
+      nickname: 'dicenet-bot',
+      games: 999,
+      profileImage: 'assets/images/account.svg',
+      isFriend: true
     }
   ];
 
@@ -55,6 +71,21 @@ export class UserService {
 
   public getUser() {
     return this.user$;
+  }
+
+  findIndexToUpdate(newItem) {
+    return newItem.id === this;
+  }
+
+  findElement(value) {
+    if(value === 'all') {
+      return this.getUsers();
+    }
+    return of(this.users.filter((user) => value === user.firstname || user.lastname));
+  }
+
+  public findUserById(id: number) {
+    return this.users.find((user: User) => user.id === id);
   }
 
   public addUser(user: User) {

@@ -26,6 +26,13 @@ export class RentsPage implements OnInit {
     });
   }
 
+  doRefresh(event) {
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+
   getNavigationExtras() {
     if (this.router.getCurrentNavigation().extras.state) {
       this.user = this.router.getCurrentNavigation().extras.state.user;

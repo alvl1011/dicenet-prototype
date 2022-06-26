@@ -11,14 +11,17 @@ import { SharedModule } from "../shared/shared.module";
 import { ModalComponent } from "../modal/modal.component";
 
 @NgModule({
-            imports: [
-              CommonModule,
-              FormsModule,
-              IonicModule,
-              GameViewPageRoutingModule,
-              SharedModule
-            ],
-            declarations: [GameViewPage, ModalComponent],
-  providers: [DatePipe]
-})
+			  imports: [
+				  CommonModule,
+				  FormsModule,
+				  IonicModule,
+				  GameViewPageRoutingModule,
+				  SharedModule
+			  ],
+			  declarations: [GameViewPage, ModalComponent],
+			  exports: [
+				  ModalComponent
+			  ],
+			  providers: [DatePipe]
+		  })
 export class GameViewPageModule {}

@@ -1,0 +1,94 @@
+ion-content {
+  font-family: 'IBM Plex Mono' !important;
+  --background: url(../../assets/images/dice-back.svg) rgba(28, 28, 28) 105% 105% no-repeat;
+  --color: white;
+}
+
+ion-searchbar {
+  --background: rgb(68, 68, 68);
+  --color: white;
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  position: fixed;
+  z-index: 1;
+}
+
+.chats {
+
+  ion-item {
+    --background: #111111;
+    border: 1px solid transparent;;
+    border-radius: 5px;
+    margin: 5px 10px;
+    ion-label {
+      font-family: 'IBM Plex Mono' !important;
+      --color: white;
+
+      p {
+        font-size: 12px;
+        display: block;
+        width: 200px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      h2 {
+        font-size: 14px;
+      }
+    }
+    .info-div {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 0.8rem;
+      color: white;
+      font-weight: bolder;
+      text-align: right;
+      p {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+ion-buttons {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  ion-button {
+    background-color: #BB000E;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    float: end;
+    font-size: 32px;
+  }
+}
+
+ion-modal {
+  --border-radius: 20px;
+  width: auto;
+  --background: rgba(101, 101, 101, 0.8);
+}
+
+ion-refresher ion-refresher-content {
+  background: #161616;
+  --color:#FFF!important;
+  --ion-text-color: #fff !important;
+  .refresher-pulling-icon {
+    color: #fff !important;
+  }
+}
+
+.categories {
+  background-color: #161616;
+
+  .active {
+    color: white;
+    background-color: #E31C25;
+    border: 2px solid #E31C25;
+    border-radius: 0 0 10px 10px;
+  }
+}

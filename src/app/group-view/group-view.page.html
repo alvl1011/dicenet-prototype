@@ -1,0 +1,55 @@
+<app-header title="Group details" [isMainScreen]="false"></app-header>
+<ion-content>
+  <div class="d-flex flex-column align-items-center pt-4">
+    <img class="avatar" src="{{ group.profileImage }}"/>
+    <div class=" text-center pt-3">
+      {{ group.name }}
+      <p style="font-size: 12px">{{ group.amount }} members</p>
+    </div>
+  </div>
+  <hr class="text-white fw-bold ms-4 me-4">
+  <div *ngIf="!group.isJoin" class="d-flex flex-column mt-4 ms-5 me-5">
+    <div style="font-size: 13px">
+      <ion-icon name="create-outline"></ion-icon>
+      Description
+    </div>
+    <div style="font-size: 12px">
+      {{ group.description }}
+    </div>
+    <div class="d-flex justify-content-between mt-4 mb-2">
+      <div style="font-size: 13px">
+        <ion-icon style="font-size: 14px" class="pe-1" name="link-outline"></ion-icon>
+        Invite link:
+      </div>
+      <div style="font-size: 12px">{{ group.link }}</div>
+    </div>
+    <div class="d-flex justify-content-between mb-2">
+      <div style="font-size: 13px">
+        <ion-icon style="font-size: 14px" class="pe-1" name="notifications-outline"></ion-icon>
+        Notifications:
+      </div>
+      <ion-toggle></ion-toggle>
+    </div>
+  </div>
+  <div *ngIf="!group.isJoin" class="members d-flex flex-column ms-3 me-3">
+    <div class="title-drop">Members: </div>
+    <ion-item lines="none" *ngFor="let member of group.companions">
+      <ion-avatar  slot="start">
+        <img src="{{ member.profileImage }}" alt="avatar">
+      </ion-avatar>
+      <div>
+        <ion-label class="ion-text-nowrap">
+          <h2>{{ member.firstname + " " +  member.lastname }}</h2>
+        </ion-label>
+      </div>
+    </ion-item>
+  </div>
+  <ion-buttons class="d-flex flex-column  bottom-0 pt-3">
+    <ion-button *ngIf="!group.isJoin" class="red" (click)="leaveGroup()">
+      LEAVE GROUP
+    </ion-button>
+    <ion-button *ngIf="group.isJoin" class="red" (click)="joinGroup()">
+      JOIN GROUP
+    </ion-button>
+  </ion-buttons>
+</ion-content>

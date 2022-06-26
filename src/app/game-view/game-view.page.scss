@@ -62,7 +62,7 @@ ion-card {
 
 }
 
-ion-textarea {
+.textarea {
   color: white;
   font-family: 'IBM Plex Mono' !important;
   font-size: 10px;
@@ -97,9 +97,7 @@ ion-buttons {
 }
 
 ion-modal {
-  margin: auto;
-  padding: 0 10px;
+  --border-radius: 20px;
   width: auto;
-  height: 423px;
   --background: rgba(101, 101, 101, 0.8);
 }
