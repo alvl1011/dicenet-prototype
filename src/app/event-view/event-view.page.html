@@ -26,13 +26,13 @@
       </div>
     </ion-card-content>
   </ion-card>
-  <ion-textarea>
+  <div class="textarea">
     <hr>
     <div>
       {{ event.description }}
     </div>
     <hr>
-  </ion-textarea>
+  </div>
   <ion-buttons class="d-flex justify-content-between align-items-center">
     <ion-button *ngIf="event.author.id  !== user.id"
       (click)="onApplication()">APPLY</ion-button>
