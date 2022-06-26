@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: 'news',
-        loadChildren: () => import('../../game-collection/game-collection.module').then(m => m.GameCollectionPageModule)
+        loadChildren: () => import('../../news/news.module').then( m => m.NewsPageModule)
       },
       {
         path: 'collection',
@@ -26,7 +26,7 @@ const routes: Routes = [
       },
       {
         path: 'profile',
-        loadChildren: () => import('../../game-collection/game-collection.module').then(m => m.GameCollectionPageModule)
+        loadChildren: () => import('../../user/user.module').then(m => m.UserPageModule)
       },
       {
         path: 'error',
