@@ -4,6 +4,19 @@ ion-content {
   --color: white;
 }
 
+.round-buttons {
+  ion-button.round {
+    background-color: #363636;
+    filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.25));
+    border: 1px solid transparent;
+    font-size: 14px;
+    border-radius: 50% !important;
+    padding: 0 2px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
 ion-card {
   font-family: 'IBM Plex Mono' !important;
   color: white;

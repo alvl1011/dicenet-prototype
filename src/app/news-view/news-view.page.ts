@@ -24,7 +24,7 @@ export class NewsViewPage implements OnInit {
     this.newService.deleteNews(this.news);
     this.navigation.back();
   }
-  isLiked(){
+  isLiked(): boolean {
     return this.like;
   }
 

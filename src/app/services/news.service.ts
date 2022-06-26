@@ -27,7 +27,8 @@ export class NewsService {
         city: 'Karlsruhe',
         nickname: 'vladi',
         games: 2,
-        profileImage: 'assets/images/avatar.png'
+        profileImage: 'assets/images/avatar.png',
+        isFriend: true
       },
       createdAt: new Date(),
       likes: 15,

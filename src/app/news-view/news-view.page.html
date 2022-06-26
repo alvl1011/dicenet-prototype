@@ -42,14 +42,14 @@
         <ion-icon name="heart-outline"></ion-icon>
         {{ news.likes }}
       </p>
-      <div>
-        <ion-button [ngClass]="isLiked() ? 'btn like': 'btn unlike'" (click)="onLike()" shape="round" color="red" fill="red">
-          <ion-icon name="heart-outline"></ion-icon>
+      <ion-buttons class="round-buttons d-flex flex-row gap-2">
+        <ion-button [class.red]="isLiked()" (click)="onLike()" id="trigger-people" class="mb-2 round">
+          <ion-icon name="heart-outline" style="font-size: 32px"></ion-icon>
         </ion-button>
-        <ion-button (click)="onMessage()" shape="round" color="red" fill="red">
-          <ion-icon name="send-outline"></ion-icon>
+        <ion-button (click)="onMessage()" class="round">
+          <ion-icon name="paper-plane-outline" style="font-size: 32px"></ion-icon>
         </ion-button>
-      </div>
+      </ion-buttons>
     </div>
   </ion-card-content>
   <ion-buttons class="d-flex justify-content-between bottom-0">
