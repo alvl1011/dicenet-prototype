@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">dicenet-prototype</string>
-    <string name="title_activity_main">dicenet-prototype</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">Dicenet</string>
+    <string name="title_activity_main">Dicenet</string>
+    <string name="package_name">com.app.dicenet</string>
+    <string name="custom_url_scheme">com.app.dicenet</string>
 </resources>

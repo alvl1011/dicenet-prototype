@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GameService } from "../services/game.service";
 import { NavigationService } from "../services/navigation.service";
 import { Router } from "@angular/router";
+import { FcmService } from "../services/fcm.service";
 
 @Component({
   selector: 'app-edit-game',
@@ -9,6 +10,8 @@ import { Router } from "@angular/router";
   styleUrls: ['./edit-game.page.scss'],
 })
 export class EditGamePage implements OnInit {
+
+  token = '';
 
   id: number;
   title: string;
@@ -26,10 +29,13 @@ export class EditGamePage implements OnInit {
 
   constructor(private gameService: GameService,
               private navigation: NavigationService,
-              private router: Router) { }
+              private router: Router,
+              private fcmService: FcmService) { }
 
   ngOnInit() {
     this.getNavigationExtras();
+    this.fcmService.initPush();
+    this.token = this.fcmService.token;
   }
 
   getNavigationExtras() {

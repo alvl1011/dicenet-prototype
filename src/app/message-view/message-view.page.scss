@@ -1,0 +1,143 @@
+ion-content {
+  font-family: 'IBM Plex Mono' !important;
+  --background: url(../../assets/images/dice-back.svg) rgba(28, 28, 28) 105% 105% no-repeat;
+  --color: white;
+}
+
+ion-item {
+  --background: transparent;
+  padding: 0 20px;
+  --ion-border-color: rgba(255, 255, 255, 0.5);
+  --highlight-color-focused: white;
+
+  --padding-start: 0 !important;
+  --inner-padding-end: 0 !important;
+
+  ion-label {
+    font-family: 'IBM Plex Mono' !important;
+    font-size: 14px;
+    --color: white;
+  }
+
+  ion-icon {
+    font-size: 24px;
+  }
+
+}
+
+ion-item.item-has-focus > ion-label{
+  color: white !important;
+  ion-icon {
+    display: none;
+  }
+}
+
+.has-focus {
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  color: white;
+
+  ion-icon {
+    display: none;
+  }
+}
+
+ion-input {
+  font-family: 'IBM Plex Mono' !important;
+  font-size: 14px;
+  color: white
+}
+
+.chat {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble{
+  background-color: #111111;
+  border-radius: 5px;
+  box-shadow: 0 0 6px #111111;
+  display: block;
+  padding: 10px 25px;
+  position: relative;
+  vertical-align: top;
+}
+
+.bubble::before {
+  background-color: #111111;
+  content: "\00a0";
+  display: block;
+  height: 16px;
+  position: absolute;
+  top: 11px;
+  transform:             rotate( 29deg ) skew( -35deg );
+  -moz-transform:    rotate( 29deg ) skew( -35deg );
+  -ms-transform:     rotate( 29deg ) skew( -35deg );
+  -o-transform:      rotate( 29deg ) skew( -35deg );
+  -webkit-transform: rotate( 29deg ) skew( -35deg );
+  width:  20px;
+}
+
+.bubble-me {
+  background-color: #656565;
+  border-radius: 5px;
+  box-shadow: 0 0 6px #111111;
+  display: block;
+  padding: 10px 25px;
+  position: relative;
+  vertical-align: top;
+}
+
+.bubble-me::before {
+  background-color: #656565;
+  content: "\00a0";
+  display: block;
+  height: 16px;
+  position: absolute;
+  top: 11px;
+  transform:             rotate( 29deg ) skew( -35deg );
+  -moz-transform:    rotate( 29deg ) skew( -35deg );
+  -ms-transform:     rotate( 29deg ) skew( -35deg );
+  -o-transform:      rotate( 29deg ) skew( -35deg );
+  -webkit-transform: rotate( 29deg ) skew( -35deg );
+  width:  20px;
+}
+
+.me {
+  float: left;
+  margin: 5px 45px 5px 20px;
+}
+
+.me::before {
+  box-shadow: -2px 2px 2px 0 rgba(17, 17, 17, .4);
+  left: -9px;
+}
+
+.you {
+  float: right;
+  margin: 5px 20px 5px 45px;
+}
+
+.you::before {
+  box-shadow: 2px -2px 2px 0 rgba(17, 17, 17, .4);
+  right: -9px;
+}
+
+.info-div {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  font-size: 12px;
+  color: white;
+  font-weight: normal;
+  text-align: right;
+}
+
+
+
+
+
+

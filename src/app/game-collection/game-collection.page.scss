@@ -1,3 +1,6 @@
+body {
+  background-color: #111111;
+}
 ion-content {
   font-family: 'IBM Plex Mono' !important;
   --background: url(../../assets/images/dice-back.svg) rgba(28, 28, 28) 105% 105% no-repeat;
@@ -36,3 +39,14 @@ ion-buttons {
     font-weight: normal;
   }
 }
+
+
+ion-refresher ion-refresher-content {
+  background: #161616;
+  --color:#FFF!important;
+  --ion-text-color: #fff !important;
+  .refresher-pulling-icon {
+    color: #fff !important;
+  }
+}
+

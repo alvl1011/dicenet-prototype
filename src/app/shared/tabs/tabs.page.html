@@ -5,7 +5,6 @@
         <ion-img src="../../assets/images/Newspaper.svg"></ion-img>
       </ion-thumbnail>
       <ion-label>News</ion-label>
-      <ion-badge>6</ion-badge>
     </ion-tab-button>
 
     <ion-tab-button tab="collection" [class.active-item]="selectedPath.includes('collection')">
@@ -20,9 +19,10 @@
         <ion-img src="../../assets/images/chat.svg"></ion-img>
       </ion-thumbnail>
       <ion-label>Social</ion-label>
+      <ion-badge *ngIf="socialCounter !== 0">{{ socialCounter }}</ion-badge>
     </ion-tab-button>
 
-    <ion-tab-button tab="tournaments" [class.active-item]="selectedPath.includes('tournaments')">
+    <ion-tab-button tab="events" [class.active-item]="selectedPath.includes('events')">
       <ion-thumbnail>
         <ion-img src="../../assets/images/award.svg"></ion-img>
       </ion-thumbnail>

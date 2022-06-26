@@ -17,6 +17,6 @@ import { TabsPage } from './tabs.page';
   ],
   declarations: [TabsPage],
   exports: [
-  ]
+  ],
 })
 export class TabsPageModule {}

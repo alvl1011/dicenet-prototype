@@ -1,0 +1,38 @@
+<app-header title="Create group" [isMainScreen]="false"></app-header>
+
+<ion-content>
+  <div class="d-flex flex-column align-items-center pt-4">
+    <label class="custom-file-upload mt-2 ps-2 pe-2 w-75">
+      <input id="image" type="file" (change)="onFileChange($event)"/>
+      <img class="avatar" *ngIf="imagePreview" src="{{ imagePreview }}">
+      <img class="avatar" *ngIf="!imagePreview" src="assets/images/add-photo.png"/>
+    </label>
+    <div class=" text-center pt-3">
+      Click to add photo
+    </div>
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="pencil-outline"></ion-icon>
+        Name
+      </ion-label>
+      <ion-input [(ngModel)]="title" placeholder="Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="create-outline"></ion-icon>
+        Description
+      </ion-label>
+      <ion-textarea [(ngModel)]="description" placeholder="Add description to game"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-buttons class="d-flex justify-content-between bottom-0 pt-3">
+    <ion-button (click)="onBack()">
+      CANCEL
+    </ion-button>
+    <ion-button class="red" (click)="submitForm()">
+      CREATE
+    </ion-button>
+  </ion-buttons>
+</ion-content>

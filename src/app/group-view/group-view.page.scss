@@ -1,0 +1,86 @@
+ion-content {
+  font-family: 'IBM Plex Mono' !important;
+  --background: url(../../assets/images/dice-back.svg) rgba(28, 28, 28) 105% 105% no-repeat;
+  --color: white;
+}
+
+ion-buttons {
+  margin: 5px 10px;
+  align-items: center;
+  ion-button {
+    font-family: 'IBM Plex Mono' !important;
+    border-radius: 5px;
+    padding: 8px;
+    width: 80%;
+    background-color: #363636;
+    filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.25));
+    font-weight: normal;
+  }
+}
+
+.red {
+  background-color: #E31C25 !important;
+}
+
+.avatar {
+  width: 98px;
+  height: 98px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+ion-toggle {
+  --background: #656565;
+  --background-checked: #161616;
+
+  --handle-background: #161616;
+  --handle-background-checked: #E31C25;
+}
+
+.members {
+  background-color: #656565;
+  opacity: 80%;
+  max-height: 300px;
+
+  .title-drop {
+    font-size: 16px;
+    padding: 10px;
+    background-color: #111111;
+  }
+
+  ion-item {
+    --background: #111111;
+    border: 1px solid transparent;;
+    border-radius: 5px;
+    margin: 5px 10px;
+    ion-label {
+      font-family: 'IBM Plex Mono' !important;
+      --color: white;
+
+      p {
+        font-size: 12px;
+        display: block;
+        width: 200px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      h2 {
+        font-size: 14px;
+      }
+    }
+    .info-div {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 0.8rem;
+      color: white;
+      font-weight: bolder;
+      text-align: right;
+      p {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+

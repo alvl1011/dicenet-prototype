@@ -1,0 +1,80 @@
+<app-header *ngIf="!isGroup" [isMessageView]="true" [title]="companion. firstname + ' ' + companion.lastname" [isMainScreen]="false"></app-header>
+<app-header *ngIf="isGroup" [title]="group.name" [isMainScreen]="false"></app-header>
+<ion-content>
+  <div class="chat" *ngIf="!isGroup">
+    <div *ngFor="let message of dialog.messages">
+      <div *ngIf="message.userId === user.id" class="bubble you">
+        <div class="pt-3">
+          {{ message.text }}
+        </div>
+        <div class="info-div d-flex">
+          <div>
+            <ion-icon *ngIf="!message.isRead" name="checkmark-outline"></ion-icon>
+            <ion-icon *ngIf="message.isRead" name="checkmark-done-outline"></ion-icon>
+          </div>
+          <p>{{ message.sTime | date: 'hh:mm' }}</p>
+        </div>
+      </div>
+      <div *ngIf="message.userId === companion.id" class="bubble-me me">
+        <div class="pt-3">
+          {{ message.text }}
+        </div>
+        <div class="info-div d-flex">
+          <div>
+            <ion-icon *ngIf="!message.isRead" name="checkmark-outline"></ion-icon>
+            <ion-icon *ngIf="message.isRead" name="checkmark-done-outline"></ion-icon>
+          </div>
+          <p>{{ message.sTime | date: 'hh:mm' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chat" *ngIf="isGroup">
+    <div *ngFor="let message of group.messages">
+      <div *ngIf="message.userId === user.id" class="bubble you">
+        <div class="pt-3">
+          {{ message.text }}
+        </div>
+        <div class="info-div d-flex">
+          <div>
+            <ion-icon *ngIf="!message.isRead" name="checkmark-outline"></ion-icon>
+            <ion-icon *ngIf="message.isRead" name="checkmark-done-outline"></ion-icon>
+          </div>
+          <p>{{ message.sTime | date: 'hh:mm' }}</p>
+        </div>
+      </div>
+      <div *ngIf="message.userId !== user.id" class="bubble-me me">
+        <div class="pe-5">
+          {{ group.companions[message.userId].firstname }}
+        </div>
+        <div class="pt-2">
+          {{ message.text }}
+        </div>
+        <div class="info-div d-flex">
+          <div>
+            <ion-icon *ngIf="!message.isRead" name="checkmark-outline"></ion-icon>
+            <ion-icon *ngIf="message.isRead" name="checkmark-done-outline"></ion-icon>
+          </div>
+          <p>{{ message.sTime | date: 'hh:mm' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ion-item class="w-100 position-fixed bottom-0 d-flex justify-content-between mb-4">
+    <ion-label position="floating" class="d-flex justify-content-between">
+      Message
+    </ion-label>
+    <ion-buttons *ngIf="!isGroup" slot="end">
+      <ion-button (click)="onMessage()" class="text-white">
+        <ion-icon class="float-end" name="paper-plane-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons *ngIf="isGroup" slot="end">
+      <ion-button (click)="onGroupMessage()" class="text-white">
+        <ion-icon class="float-end" name="paper-plane-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-input [(ngModel)]="text" placeholder="Type message">
+    </ion-input>
+  </ion-item>
+</ion-content>

@@ -1,7 +1,7 @@
 <div class="d-flex flex-column main-modal">
   <div class="modal-title game-title d-flex justify-content-between">
     <div class="pt-1 ps-1">
-      Rent to:
+      {{ title }}
     </div>
     <div>
       <ion-buttons>
@@ -11,7 +11,7 @@
       </ion-buttons>
     </div>
   </div>
-  <div (click)="onClick(user)"
+  <div (click)="onClick(user, isMessage)"
     class="user d-flex justify-content-between"
     *ngFor="let user of users">
       <div class="avatar">
