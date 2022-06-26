@@ -37,6 +37,10 @@ export class EditNewsPage implements OnInit {
       this.image = this.router.getCurrentNavigation().extras.state.news.image;
       this.createdAt = this.router.getCurrentNavigation().extras.state.news.createdAt;
       this.imagePreview = this.router.getCurrentNavigation().extras.state.news.imagePreview;
+      this.user =  this.router.getCurrentNavigation().extras.state.news.user;
+      this.likes = this.router.getCurrentNavigation().extras.state.news.likes;
+      this.views = this.router.getCurrentNavigation().extras.state.news.views;
+      this.imageFile = this.router.getCurrentNavigation().extras.state.news.imageFile;
     }
   }
   /**

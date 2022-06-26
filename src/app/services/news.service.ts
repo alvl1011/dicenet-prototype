@@ -75,7 +75,7 @@ export class NewsService {
   public editNews(singleNews: News) {
     const updateItem = this.news.find(this.findIndexToUpdate, singleNews.id);
     const index = this.news.indexOf(updateItem);
-    this.news$[index] = singleNews;
+    this.news[index] = singleNews;
   }
 
   public deleteNews(news: News) {
