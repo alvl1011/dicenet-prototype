@@ -1,0 +1,61 @@
+<app-header title="News" [isMainScreen]="false"></app-header>
+
+<ion-content>
+  <ion-card>
+    <img *ngIf="news.image && !news.imagePreview" [src]="news.image"/>
+    <img *ngIf="!news.image || news.imagePreview" [src]="news.imagePreview"/>
+    <ion-card-content>
+      <div class="blurred"></div>
+      <ion-card-title>
+        {{ news.newsTitle }}
+      </ion-card-title>
+      <div class="d-flex justify-content-between">
+        <p class="pt-2">
+          <ion-icon name="calendar"></ion-icon>
+          <strong> Added at: </strong>
+          {{ news.createdAt | date: 'dd-MM-YYYY' }}
+        </p>
+        <p class="pt-2">
+          <ion-icon name="eye-outline"></ion-icon>
+          {{ news.views }}
+        </p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <p class="pt-2">
+          <ion-icon name="pencil-outline"></ion-icon>
+          <strong> Created by: </strong>
+          {{ news.user.nickname }}
+        </p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-textarea>
+    <hr>
+    <div>
+      {{ news.newsContent }}
+    </div>
+    <hr>
+  </ion-textarea>
+  <ion-card-content>
+    <div class="d-flex justify-content-between">
+      <p class="pt-2">
+        <ion-icon name="heart-outline"></ion-icon>
+        {{ news.likes }}
+      </p>
+      <div>
+        <ion-button [ngClass]="isLiked() ? 'btn like': 'btn unlike'" (click)="onLike()" shape="round" color="red" fill="red">
+          <ion-icon name="heart-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="onMessage()" shape="round" color="red" fill="red">
+          <ion-icon name="send-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </ion-card-content>
+  <ion-buttons class="d-flex justify-content-between bottom-0">
+    <ion-button (click)="onEdit()">EDIT</ion-button>
+    <div class="d-flex flex-column gap-2">
+      <ion-button class="red" (click)="onDelete()">DELETE</ion-button>
+    </div>
+  </ion-buttons>
+</ion-content>
