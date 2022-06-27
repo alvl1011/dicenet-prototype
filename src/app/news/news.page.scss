@@ -4,6 +4,15 @@ ion-content {
   --color: white;
 }
 
+ion-refresher ion-refresher-content {
+  background: #161616;
+  --color:#FFF!important;
+  --ion-text-color: #fff !important;
+  .refresher-pulling-icon {
+    color: #fff !important;
+  }
+}
+
 ion-searchbar {
   --background: rgb(68, 68, 68);
   --color: white;

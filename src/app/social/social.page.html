@@ -1,4 +1,8 @@
 <app-header title="Messages"></app-header>
+<div class="categories d-flex justify-content-around">
+  <div [class.active]="isActiveChats" (click)="changeState()" class="text-center w-50 pt-2 text-white pb-2">Chats</div>
+  <div [class.active]="isActiveGroups" (click)="changeState()" class="text-center w-50 pt-2 text-white pb-2">Groups</div>
+</div>
 <ion-content appSideSwipe
              (swipeLeft)="previousPage()"
              (swipeRight)="nextPage()">
@@ -8,10 +12,6 @@
       refreshingSpinner="circles">
     </ion-refresher-content>
   </ion-refresher>
-  <div class="categories d-flex justify-content-around">
-    <div [class.active]="isActiveChats" (click)="changeState()" class="text-center w-50 pt-2 pb-2">Chats</div>
-    <div [class.active]="isActiveGroups" (click)="changeState()" class="text-center w-50 pt-2 pb-2">Groups</div>
-  </div>
 <div class="chats" *ngIf="isActiveChats">
   <ion-item lines="none" *ngFor="let dialog of dialogs">
     <ion-avatar (click)="toFriendView(getUser(dialog.companionId))" slot="start">

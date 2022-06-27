@@ -1,5 +1,10 @@
 <app-header title="News" [isMainScreen]="true"></app-header>
 
+<div class="categories d-flex justify-content-around">
+  <div [class.active]="isActiveAll" (click)="changeState('All')" class="text-center w-50 pt-2 text-white pb-2">All</div>
+  <div [class.active]="isActiveTableTop" (click)="changeState('Tabletop')" class="text-center text-white w-50 pt-2 pb-2">Boards</div>
+  <div [class.active]="isActiveEvents" (click)="changeState('Events')" class="text-center w-50 text-white pt-2 pb-2">Events</div>
+</div>
 <ion-content appSideSwipe
              (swipeRight)="nextPage()">
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
@@ -8,11 +13,6 @@
       refreshingSpinner="circles">
     </ion-refresher-content>
   </ion-refresher>
-  <div class="categories d-flex justify-content-around">
-    <div [class.active]="isActiveAll" (click)="changeState('All')" class="text-center w-50 pt-2 pb-2">All</div>
-    <div [class.active]="isActiveTableTop" (click)="changeState('Tabletop')" class="text-center w-50 pt-2 pb-2">Boards</div>
-    <div [class.active]="isActiveEvents" (click)="changeState('Events')" class="text-center w-50 pt-2 pb-2">Boards</div>
-  </div>
   <div
        *ngFor="let singleNews of news"
        (click)="onClick(singleNews)">
